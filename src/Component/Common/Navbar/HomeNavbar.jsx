@@ -100,7 +100,7 @@ const HomeNavbar = () => {
                     >
                         <option value="">Pages</option>
                         <option value="/shoppingCart">ShoppingCart</option>
-                        <option value="/Page2">Page 2</option>
+                        <option value="/userProfile">UserProfile</option>
                         <option value="/Page3">Page 3</option>
                     </select>
 

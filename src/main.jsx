@@ -9,6 +9,7 @@ import {
 import MainLayout from './MainLayout';
 import MainHomePage from './Component/Home/MainHomePage';
 import ShoppingCartPage from './Component/ShoppingCartPage/ShoppingCartPage';
+import UserProfile from './Component/UserProfile/UserProfile';
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path:"shoppingCart",
         element:<ShoppingCartPage/>
+      },
+      {
+        path:"userProfile",
+        element:<UserProfile/>
       },
     ]
   },
