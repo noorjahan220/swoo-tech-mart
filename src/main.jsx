@@ -10,6 +10,7 @@ import MainLayout from './MainLayout';
 import MainHomePage from './Component/Home/MainHomePage';
 import ShoppingCartPage from './Component/ShoppingCartPage/ShoppingCartPage';
 import UserProfile from './Component/UserProfile/UserProfile';
+import ProductDetailPage from './Component/ProductDetailPage/ProductDetailPage';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:"userProfile",
         element:<UserProfile/>
+      },
+      {
+        path:"productDetail",
+        element:<ProductDetailPage/>
       },
     ]
   },

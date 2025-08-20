@@ -101,7 +101,7 @@ const HomeNavbar = () => {
                         <option value="">Pages</option>
                         <option value="/shoppingCart">ShoppingCart</option>
                         <option value="/userProfile">UserProfile</option>
-                        <option value="/Page3">Page 3</option>
+                        <option value="/productDetail">ProductDetailPage</option>
                     </select>
 
                     <select className="h-[21px] font-inter text-[14px] leading-[21px] border-none">

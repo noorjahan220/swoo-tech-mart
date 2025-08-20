@@ -5,10 +5,10 @@ import Footer from './Component/Common/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className="flex flex-col w-11/12 mx-auto">
+        <div className="flex flex-col w-11/12 mx-auto bg-[#F0F2F5]">
             <HomeNavbar/>
             
-            <main className="flex-grow w-11/12 mx-auto py-4">
+            <main className="flex-grow w-11/12 mx-auto">
                 <Outlet />
             </main>
             
