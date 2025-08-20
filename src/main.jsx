@@ -13,43 +13,50 @@ import UserProfile from './Component/UserProfile/UserProfile';
 import ProductDetailPage from './Component/ProductDetailPage/ProductDetailPage';
 import Login from './Component/Authentication/Login';
 import Register from './Component/Authentication/Register';
+import Contact from './Component/Contact/Contact';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout/>,
+    element: <MainLayout />,
     children: [
       {
         path: "/",
-        element: <MainHomePage/>
+        element: <MainHomePage />
       },
       {
-        path:"shoppingCart",
-        element:<ShoppingCartPage/>
+        path: "shoppingCart",
+        element: <ShoppingCartPage />
       },
       {
-        path:"userProfile",
-        element:<UserProfile/>
+        path: "userProfile",
+        element: <UserProfile />
       },
       {
-        path:"productDetail",
-        element:<ProductDetailPage/>
+        path: "productDetail",
+        element: <ProductDetailPage />
       },
-       {
-        path:"login",
-        element:<Login/>
+      {
+        path: "login",
+        element: <Login />
       },
-          {
-        path:"register",
-        element:<Register/>
+      {
+        path: "register",
+        element: <Register />
       },
+      {
+        path: "contact",
+        element: <Contact/>
+      },
+
+
     ]
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </StrictMode>,
 )

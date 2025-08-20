@@ -89,6 +89,7 @@ const HomeNavbar = () => {
                         <option value="/productDetail">ProductDetailPage</option>
                         <option value="/login">LogIn</option>
                         <option value="/register">Register</option>
+                        <option value="/contact">Contact Page</option>
                     </select>
 
                     <select className="h-[21px] font-inter text-[14px] leading-[21px] border-none">
