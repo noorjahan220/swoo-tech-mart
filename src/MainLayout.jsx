@@ -1,13 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import HomeNavbar from './Component/Common/Navbar/HomeNavbar';
+import Footer from './Component/Common/Footer/Footer';
 
 const MainLayout = () => {
     return (
-        <div className="w-screen overflow-x-hidden">
+        <div className="flex flex-col w-11/12 mx-auto">
+            <HomeNavbar/>
             
-            <div className="w-11/12 mx-auto">
+            <main className="flex-grow w-11/12 mx-auto py-4">
                 <Outlet />
-            </div>
+            </main>
+            
+            <Footer/>
         </div>
     );
 };
