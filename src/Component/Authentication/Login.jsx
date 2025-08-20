@@ -18,7 +18,7 @@ const Login = () => {
           </div>
 
           <div className="flex flex-col justify-center h-[523px]">
-            <h1 className="text-[28px] font-bold text-green-600 mb-2">
+            <h1 className="text-[28px] font-bold text-[rgba(75,62,196,1)] mb-2">
               Welcome Back
             </h1>
             <p className="text-gray-500 text-sm font-normal tracking-wider mb-8">
@@ -37,7 +37,7 @@ const Login = () => {
                   type="email" 
                   id="email"
                   placeholder="Example@gmail.com"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgba(75,62,196,1)]"
                 />
               </div>
 
@@ -53,7 +53,7 @@ const Login = () => {
                     type="password" 
                     id="password"
                     placeholder="...."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[rgba(75,62,196,1)]"
                   />
                   <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-700 cursor-pointer">
                     <svg 
@@ -82,7 +82,7 @@ const Login = () => {
 
               <button 
                 type="submit"
-                className="w-[138px] h-[51px] bg-green-500 text-white font-medium text-lg py-3 rounded-[10px] hover:bg-green-600 transition-colors"
+                className="w-[138px] h-[51px] bg-[rgba(75,62,196,1)] text-white font-medium text-lg py-3 rounded-[10px] hover:bg-[rgba(75,62,196,1)] transition-colors"
               >
                 LOGIN
               </button>
@@ -90,7 +90,7 @@ const Login = () => {
             
             <p className="text-left text-sm text-gray-400 mt-8">
               NEW USER ? 
-              <a href="#" className="font-normal text-sm text-green-500 hover:underline ml-1">
+              <a href="#" className="font-normal text-sm text-[rgba(75,62,196,1)] hover:underline ml-1">
                 SIGN UP
               </a>
             </p>
