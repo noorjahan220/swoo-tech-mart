@@ -11,6 +11,8 @@ import MainHomePage from './Component/Home/MainHomePage';
 import ShoppingCartPage from './Component/ShoppingCartPage/ShoppingCartPage';
 import UserProfile from './Component/UserProfile/UserProfile';
 import ProductDetailPage from './Component/ProductDetailPage/ProductDetailPage';
+import Login from './Component/Authentication/Login';
+import Register from './Component/Authentication/Register';
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
       {
         path:"productDetail",
         element:<ProductDetailPage/>
+      },
+       {
+        path:"login",
+        element:<Login/>
+      },
+          {
+        path:"register",
+        element:<Register/>
       },
     ]
   },

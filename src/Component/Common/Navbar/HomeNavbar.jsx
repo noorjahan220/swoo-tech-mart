@@ -27,8 +27,8 @@ const HomeNavbar = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row justify-between items-center border-b-[1px] w-full h-auto md:h-[111px] p-4 md:p-0 gap-4 md:gap-0">
-                <div className="flex-shrink-0">
+            <div className="flex  flex-col md:flex-row justify-between items-center border-b-[1px] w-full h-auto md:h-[111px]  md:p-0 gap-4 md:gap-0">
+                <div className="flex-shrink-0 ml-8">
                     <img
                         className="w-[150px] h-[40px] relative top-[5px]"
                         src="https://i.ibb.co.com/SXVjdKs1/fc5fee22bca55277d3a8957a96c6ca225392b9fc.png"
@@ -66,8 +66,8 @@ const HomeNavbar = () => {
                     </div>
                 </div>
 
-                <div className="w-[207.81px] h-[36px] flex justify-start md:justify-end mt-2 md:mt-0">
-                    <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/filled-like.png" alt="filled-like" />
+                <div className="w-[207.81px] h-[36px] flex justify-start md:justify-end mt-2 md:mt-0 mr-6">
+                    <img  src="https://img.icons8.com/material-outlined/24/filled-like.png" alt="filled-like" />
                 </div>
             </div>
 
@@ -87,6 +87,8 @@ const HomeNavbar = () => {
                         <option value="/shoppingCart">ShoppingCart</option>
                         <option value="/userProfile">UserProfile</option>
                         <option value="/productDetail">ProductDetailPage</option>
+                        <option value="/login">LogIn</option>
+                        <option value="/register">Register</option>
                     </select>
 
                     <select className="h-[21px] font-inter text-[14px] leading-[21px] border-none">

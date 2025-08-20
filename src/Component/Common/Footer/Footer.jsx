@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube, FaBehance } from 'react-icons/fa';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-
 import { IoReload } from 'react-icons/io5';
 import { TbTruckDelivery } from 'react-icons/tb';
 import { MdSecurity, MdChat } from 'react-icons/md';
+
 const USFlagIcon = ({ className }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -28,31 +28,28 @@ const USFlagIcon = ({ className }) => (
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-800  h-[572.39px] top-[7209.08px] rotate-0 opacity-100 p-10">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
- 
-        <div className="flex flex-wrap justify-center items-center gap-x-12 lg:gap-x-24 gap-y-6 text-center border-b border-gray-200 pb-8 mb-8">
-          <div className="flex items-center gap-3">
+    <footer className="bg-white text-gray-800 p-6 sm:p-10">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="flex flex-wrap justify-center sm:justify-between items-center gap-x-8 lg:gap-x-24 gap-y-6 text-center sm:text-left border-b border-gray-200 pb-6 sm:pb-8 mb-6 sm:mb-8">
+          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
             <TbTruckDelivery className="text-indigo-600 w-6 h-6" />
             <span className="text-xs font-semibold text-gray-900 tracking-wider">FREE SHIPPING OVER $99</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
             <IoReload className="text-indigo-600 w-6 h-6" />
             <span className="text-xs font-semibold text-gray-900 tracking-wider">30 DAYS MONEY BACK</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
             <MdSecurity className="text-indigo-600 w-6 h-6" />
             <span className="text-xs font-semibold text-gray-900 tracking-wider">100% SECURE PAYMENT</span>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap justify-center sm:justify-start">
             <MdChat className="text-indigo-600 w-6 h-6" />
             <span className="text-xs font-semibold text-gray-900 tracking-wider">24/7 DEDICATED SUPPORT</span>
           </div>
         </div>
 
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-8 gap-y-10">
-         
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
           <div className="lg:col-span-2">
             <h3 className="text-base font-bold text-gray-900 mb-2">Swoo - Online Electronic Market</h3>
             <div className="mt-6">
@@ -61,7 +58,7 @@ const Footer = () => {
               <p className="text-sm text-gray-500 mt-4">257 Thatcher Road St, Brooklyn, Manhattan, NY 10092</p>
               <p className="text-sm text-gray-500">contact@swateletro.com</p>
             </div>
-            <div className="flex items-center gap-3 mt-6">
+            <div className="flex items-center gap-3 mt-6 flex-wrap">
               <a href="#" aria-label="Twitter" className="flex items-center justify-center w-9 h-9 bg-gray-100 rounded-full border border-gray-200 hover:bg-gray-200 transition-colors">
                 <FaTwitter className="w-4 h-4 text-gray-800" />
               </a>
@@ -80,10 +77,9 @@ const Footer = () => {
             </div>
           </div>
 
-          
           <div>
             <h3 className="text-base font-bold text-gray-900 mb-5">Top Categories</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">TV/Televisions</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Computers</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Laptops</a></li>
@@ -97,10 +93,9 @@ const Footer = () => {
             </ul>
           </div>
 
-         
           <div>
             <h3 className="text-base font-bold text-gray-900 mb-5">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">About Swoop</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Contact</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Career</a></li>
@@ -110,10 +105,9 @@ const Footer = () => {
             </ul>
           </div>
 
-         
           <div>
             <h3 className="text-base font-bold text-gray-900 mb-5">Help Center</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Customer Service</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Policy</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Terms & Conditions</a></li>
@@ -123,11 +117,10 @@ const Footer = () => {
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Product Support</a></li>
             </ul>
           </div>
-          
-          
+
           <div>
             <h3 className="text-base font-bold text-gray-900 mb-5">Partner</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2 sm:space-y-3 text-center sm:text-left">
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Become Seller</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Affiliate</a></li>
               <li><a href="#" className="text-sm text-gray-500 hover:text-indigo-600">Advertise</a></li>
@@ -136,48 +129,42 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div>
-         <div className="bg-[#f0f2f5] border-t border-gray-200 relative">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        
-        {/* Copyright Text */}
-        <div className="text-xs text-gray-500">
-          © 2024 <strong className="font-semibold text-gray-800">Shawonetc3</strong>. All Rights Reserved
+
+      <div className="bg-[#f0f2f5] border-t border-gray-200 relative mt-6 sm:mt-10">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between h-auto sm:h-16 py-4 sm:py-0 gap-4 sm:gap-0">
+          <div className="text-xs text-gray-500 text-center sm:text-left">
+            © 2024 <strong className="font-semibold text-gray-800">Shawonetc3</strong>. All Rights Reserved
+          </div>
+
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center sm:justify-end">
+            <img src="https://i.ibb.co/qMWhMq6r/4f88470ef7ca7089c358161cd638255e61147b79.png" alt="PayPal" className="h-4 object-contain" />
+            <img src="https://i.ibb.co/B5bmFKhV/6bd6f9a9a1d8c62348529d351a6bbed14866b496.png" alt="Stripe" className="h-3 object-contain" />
+            <img src="https://i.ibb.co/k2K8Py8m/5b9d40ecdd1b5c0980dfc3ae57c167489f831783.png" alt="Mastercard" className="h-5 object-contain" />
+            <img src="https://i.ibb.co/QFCb76JS/3b5e4d8866baeaa152d51cf08f5031769fbf6263.png" alt="Klarna" className="h-2 object-contain" />
+            <img src="https://i.ibb.co/jvK7mcbG/647ccd9eac28cd11f9fb6cd49c52dea670811cb9.png" alt="Visa" className="h-3 object-contain" />
+          </div>
+
+          <div className="flex items-center gap-x-4 flex-wrap justify-center sm:justify-end">
+            <button className="flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-900">
+              <span>USD</span>
+              <FaChevronDown className="w-2.5 h-2.5 text-gray-500" />
+            </button>
+            <div className="h-4 w-px bg-gray-300"></div>
+            <button className="flex items-center gap-2 text-xs text-gray-600 hover:text-gray-900">
+              <USFlagIcon className="w-5 rounded-sm" />
+              <span>Eng</span>
+              <FaChevronDown className="w-2.5 h-2.5 text-gray-500" />
+            </button>
+          </div>
         </div>
 
-        {/* Payment Icons using <img> tags */}
-        <div className="hidden lg:flex items-center gap-6">
-          <img src="https://i.ibb.co/qMWhMq6r/4f88470ef7ca7089c358161cd638255e61147b79.png" alt="PayPal" className="h-4 object-contain" />
-          <img src="https://i.ibb.co/B5bmFKhV/6bd6f9a9a1d8c62348529d351a6bbed14866b496.png" alt="Stripe" className="h-3 object-contain" />
-          <img src="https://i.ibb.co/k2K8Py8m/5b9d40ecdd1b5c0980dfc3ae57c167489f831783.png" alt="Mastercard" className="h-5 object-contain" />
-          <img src="https://i.ibb.co/QFCb76JS/3b5e4d8866baeaa152d51cf08f5031769fbf6263.png" alt="Klarna" className="h-2 object-contain" />
-          <img src="https://i.ibb.co/jvK7mcbG/647ccd9eac28cd11f9fb6cd49c52dea670811cb9.png" alt="Visa" className="h-3 object-contain" />
-        </div>
-
-        {/* Language and Currency */}
-        <div className="flex items-center gap-x-4">
-          <button className="flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-900">
-            <span>USD</span>
-            <FaChevronDown className="w-2.5 h-2.5 text-gray-500" />
-          </button>
-          <div className="h-4 w-px bg-gray-300"></div>
-          <button className="flex items-center gap-2 text-xs text-gray-600 hover:text-gray-900">
-            <USFlagIcon className="w-5 rounded-sm" />
-            <span>Eng</span>
-            <FaChevronDown className="w-2.5 h-2.5 text-gray-500" />
-          </button>
-        </div>
-      </div>
-
-      {/* Scroll to Top Button */}
-      <button 
-        className="hidden lg:flex items-center justify-center absolute right-8 top-1/2 -translate-y-1/2 w-11 h-11 bg-white rounded-full border border-gray-300 shadow-sm hover:bg-gray-50 transition-colors"
-        aria-label="Scroll to top"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      >
-        <FaChevronUp className="w-3.5 h-3.5 text-gray-600" />
-      </button>
-    </div>
+        <button 
+          className="hidden lg:flex items-center justify-center absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-11 h-11 bg-white rounded-full border border-gray-300 shadow-sm hover:bg-gray-50 transition-colors"
+          aria-label="Scroll to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <FaChevronUp className="w-3.5 h-3.5 text-gray-600" />
+        </button>
       </div>
     </footer>
   );
