@@ -10,6 +10,8 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import ProductBundleSection from './FrequentlyBoughtTogether';
 import ProductInfoSection from './ProductInfoSection';
+import RelatedProducts from './RelatedProducts';
+import RecentlyViewedSection from './RecentlyViewedSection';
 
 const ProductDetailPage = () => {
 
@@ -21,7 +23,7 @@ const ProductDetailPage = () => {
         affirmPrice: '$49/m',
         features: [
             'Intel LGA 1700 Socket: Supports 13th & 12th Gen Intel Core',
-            'DDR5 Compatible: 4*SMD DIMMs with XMP 3.0 Memory',
+            'DDDR5 Compatible: 4*SMD DIMMs with XMP 3.0 Memory',
             'Commanding Power Design: Twin 16+1+2 Phases Digital VRM'
         ],
         tags: ['FREE SHIPPING', 'FREE GIFT'],
@@ -78,36 +80,24 @@ const ProductDetailPage = () => {
         { icon: faUser, key: 'user' }
     ];
 
-    
-
-
-
-
-
-   
-
     return (
         <>
-            {/* -------------------- SECTION 1: PRODUCT DETAILS -------------------- */}
-            <div className=" w-full h-full rounded-[10px] opacity-100 mx-auto p-4 lg:p-8 bg-white">
-                <div className=" w-full h-full rounded-[10px] opacity-100 mx-auto p-4 lg:p-8">
+            
+            <div className="bg-white">
+                <div className=" px-4 py-8 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        
+                        
                         <div className="lg:col-span-5">
                             <div className="relative">
-                                <div className="w-[39px] h-[23px] absolute top-[3.5px] opacity-100
-            font-inter font-normal text-[10px] leading-[15px] uppercase
-            bg-gray-900 text-white rounded-md z-10
-            flex justify-center items-center">
-                                    NEW
+                                <div className="absolute top-2 left-2 z-10">
+                                    <span className="px-2 py-1 text-xs font-semibold uppercase bg-gray-900 text-white rounded-md">
+                                        NEW
+                                    </span>
                                 </div>
-                                <img src={mainImage} alt="Product" className="w-[524.16px] h-[550px] opacity-100  rounded-lg object-contain mb-4 " />
+                                <img src={mainImage} alt="Product" className="w-full h-auto max-h-[550px] rounded-lg object-contain mb-4" />
                             </div>
-                            <div className="flex space-x-2 width: 524.1599731445312;
-height: 88.80000305175781;
-top: 550px;
-angle: 0 deg;
-opacity: 1;
-">
+                            <div className="flex space-x-2">
                                 {productData.images.thumbnails.map(thumb => (
                                     <img
                                         key={thumb.id}
@@ -119,19 +109,21 @@ opacity: 1;
                                 ))}
                             </div>
                         </div>
+                        
+                       
                         <div className="lg:col-span-4">
                             <p className="text-gray-500 text-sm">({productData.reviewCount})</p>
-                            <h1 className="font-inter font-bold text-[16px] leading-[19.2px]">{productData.name}</h1>
-                            <p className="font-inter font-semibold text-[22px] leading-[26.4px] my-4">{productData.priceRange}</p>
-                            <ul className="font-inter  text-black space-y-2 list-disc list-inside font-inter font-normal text-[12px] leading-[21.6px]">
+                            <h1 className="font-inter font-bold text-lg leading-tight mt-1">{productData.name}</h1>
+                            <p className="font-inter font-semibold text-2xl my-4">{productData.priceRange}</p>
+                            <ul className="space-y-2 list-disc list-inside font-inter text-sm text-gray-700">
                                 {productData.features.map((feature, index) => <li key={index}>{feature}</li>)}
                             </ul>
-                            <div className="flex items-center space-x-2 my-4 w-full h-[28px] opacity-55 rounded-[6px]">
+                            <div className="flex items-center space-x-2 my-4">
                                 {productData.tags.map(tag => (
                                     <span
                                         key={tag}
                                         className={`text-xs font-medium px-3 py-1 rounded-md ${tag === 'FREE SHIPPING'
-                                            ? 'bg-[rgba(75,62,196,0.2)] text-[rgba(75,62,196,1)]'
+                                            ? 'bg-[rgba(75,62,196,0.1)] text-[rgba(75,62,196,1)]'
                                             : 'bg-red-100 text-red-700'
                                             }`}
                                     >
@@ -139,7 +131,6 @@ opacity: 1;
                                     </span>
                                 ))}
                             </div>
-
                             <div className="w-full py-4 border-y border-gray-300 mt-6">
                                 <p className="font-inter font-bold text-sm uppercase">
                                     COLOR: <span className="font-normal text-gray-600 capitalize">{selectedColor}</span>
@@ -149,11 +140,9 @@ opacity: 1;
                                         <button
                                             key={color.name}
                                             onClick={() => setSelectedColor(color.name)}
-
-                                            className={`flex items-center space-x-2 border rounded-lg p-2 transition ${selectedColor === color.name ? 'border-indigo-600 ring-2 ring-indigo-100' : 'border-gray-300'}`}
+                                            className={`flex items-center space-x-2 border rounded-lg p-2 transition ${selectedColor === color.name ? 'border-[rgba(75,62,196,1)] ring-2 ring-[rgba(75,62,196,0.1)]' : 'border-gray-300'}`}
                                         >
                                             <img src={color.img} alt={color.name} className="w-8 h-8 rounded-md object-cover" />
-
                                             <div className="text-left">
                                                 <p className="text-xs font-semibold text-gray-800">{color.name}</p>
                                                 <p className="text-xs text-gray-600">{color.price}</p>
@@ -163,60 +152,51 @@ opacity: 1;
                                 </div>
                             </div>
                             <div className="mt-6">
-                                <p className="font-inter font-bold text-[14px] leading-[23.8px] uppercase">MEMORY SIZE: <span className="font-inter font-normal text-[14px] leading-[23.8px] text-[#666666]">{selectedMemory}</span></p>
-                                <div className="flex space-x-2 mt-2">
+                                <p className="font-inter font-bold text-sm uppercase">MEMORY SIZE: <span className="font-normal text-gray-600">{selectedMemory}</span></p>
+                                <div className="flex flex-wrap gap-2 mt-2">
                                     {productData.options.memorySizes.map(size => (
                                         <button
                                             key={size}
                                             onClick={() => setSelectedMemory(size)}
-
-                                            className={`
-        rounded-lg border px-4 py-2 text-sm font-bold transition-colors
-        ${selectedMemory === size
-
-                                                    ? 'border-indigo-600 bg-indigo-50 text-indigo-600'
-
-                                                    : 'border-gray-300 text-gray-500 hover:border-gray-400 hover:text-gray-700'
-                                                }
-    `}
+                                            className={`rounded-lg border px-4 py-2 text-sm font-bold transition-colors ${selectedMemory === size ? 'border-[rgba(75,62,196,1)] bg-[rgba(75,62,196,0.05)] text-[rgba(75,62,196,1)]' : 'border-gray-300 text-gray-500 hover:border-gray-400'}`}
                                         >
                                             {size}
                                         </button>
                                     ))}
                                 </div>
                             </div>
-                            <div className="w-full h-[126.63px] rounded-[10px] bg-[rgba(75,62,196,0.08)] border border-dashed border-[rgba(75,62,196,0.4)] p-4 mt-6 flex items-center space-x-4">
-                                <img src={productData.promotion.image} alt="Gift" className="w-16 h-16" />
+                            <div className="w-full rounded-lg bg-[rgba(75,62,196,0.08)] border border-dashed border-[rgba(75,62,196,0.4)] p-4 mt-6 flex items-center space-x-4">
+                                <img src={productData.promotion.image} alt="Gift" className="w-16 h-16 flex-shrink-0" />
                                 <div>
                                     <ul>
                                         {productData.promotion.offers.map((offer, index) => (
                                             <li key={index} className="text-sm text-gray-700" dangerouslySetInnerHTML={{ __html: offer }} />
                                         ))}
                                     </ul>
-                                    <p className="text-xs text-gray-500 mt-2">Promotion will expires in: {productData.promotion.expiry}</p>
+                                    <p className="text-xs text-gray-500 mt-2">Promotion expires in: {productData.promotion.expiry}</p>
                                 </div>
                             </div>
                             <div className="text-sm text-gray-600 mt-6 space-y-1">
                                 <p><span className="font-bold text-gray-800">SKU:</span> {productData.meta.sku}</p>
                                 <p><span className="font-bold text-gray-800">CATEGORY:</span> {productData.meta.category}</p>
-                                <p><span className=" font-bold text-gray-800">BRAND:</span> <span className="text-[rgba(75,62,196,1)] font-semibold">{productData.meta.brand}</span></p>
+                                <p><span className="font-bold text-gray-800">BRAND:</span> <span className="text-[rgba(75,62,196,1)] font-semibold">{productData.meta.brand}</span></p>
                             </div>
                             <div className="flex space-x-2 mt-4">
                                 {socialIcons.map(({ icon, key }) => (
-                                    <a key={key} href="#" className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-black ">
+                                    <a key={key} href="#" className="w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-black hover:bg-gray-200">
                                         <FontAwesomeIcon icon={icon} />
                                     </a>
                                 ))}
                             </div>
                         </div>
-                        <div className="lg:col-span-3 w-[302.5px] h-[531.39px] 
-            rounded-[10px] bg-[#EDEFF6] opacity-100">
-                            <div className="bg-gray-50 rounded-lg p-6">
-                                <p className="font-inter font-normal text-[12px] leading-[18px] uppercase text-[#666666]">TOTAL PRICE:</p>
-                                <p className="font-inter font-bold text-[30px] leading-[36px]">{productData.totalPrice}</p>
-                                <div className="flex items-center w-[242.5px] h-[55px] border-b border-gray-300 my-3">
+                        
+                       
+                        <div className="lg:col-span-3">
+                            <div className="rounded-lg bg-[#EDEFF6] p-6">
+                                <p className="text-xs uppercase text-gray-600">TOTAL PRICE:</p>
+                                <p className="font-bold text-3xl">{productData.totalPrice}</p>
+                                <div className="flex items-center border-b border-gray-300 py-4 my-2">
                                     <img src="https://i.ibb.co/LzpwzgMJ/64be87a6096a7c17617839c2b1e54f84f718863e.png" alt="Affirm" className="h-4 mr-2" />
-
                                     <p className="text-sm text-gray-600 whitespace-nowrap">
                                         <span className="font-bold text-[rgba(75,62,196,1)]">{productData.affirmPrice}</span> in 12 months. <a href="#" className="text-[rgba(75,62,196,1)] underline">See more</a>
                                     </p>
@@ -232,61 +212,58 @@ opacity: 1;
                                     <span className="px-5 py-2 text-gray-800 font-bold">{quantity}</span>
                                     <button onClick={() => setQuantity(q => q + 1)} className="px-4 py-2 text-gray-500 text-xl">+</button>
                                 </div>
-                                <button className=" bg-[rgba(75,62,196,1)] text-white  py-3  transition-colors w-[242.5px] h-[50px] font-inter font-medium text-[12px] leading-[18px] text-center uppercase
-            rounded-[10px] opacity-100">ADD TO CART</button>
-                                <button className="w-full border border-[rgba(75,62,196,1)] text-black font-bold py-2.5 rounded-lg   mt-2 flex items-center justify-center gap-1">
-                                    <p className='font-inter font-medium text-[12px] leading-[18px] text-center uppercase'>Buy with</p><img src="https://i.ibb.co/F4SLF2d5/4828a955b097780d4cfc39322f712b2f45a624e6.png" alt="Buy with PayPal" className="w-[59px] h-[15px]  opacity-100" />
+                                <button className="w-full bg-[rgba(75,62,196,1)] text-white py-3 text-sm font-medium uppercase rounded-lg hover:bg-opacity-90 transition-colors">
+                                    ADD TO CART
+                                </button>
+                                <button className="w-full border border-[rgba(75,62,196,1)] text-black py-2.5 rounded-lg mt-2 flex items-center justify-center gap-1 hover:bg-[rgba(75,62,196,0.05)]">
+                                    <p className='text-sm uppercase font-medium'>Buy with</p>
+                                    <img src="https://i.ibb.co/F4SLF2d5/4828a955b097780d4cfc39322f712b2f45a624e6.png" alt="Buy with PayPal" className="h-4" />
                                 </button>
                                 <div className="flex items-center gap-3 text-sm mt-4">
-                                   
-                                    <a href="#" className="flex items-center whitespace-nowrap font-semibold ">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-[rgba(75,62,196,1)]" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
-                                        </svg>
-                                        Wishlist added
+                                    <a href="#" className="flex items-center whitespace-nowrap font-semibold text-gray-700">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 text-[rgba(75,62,196,1)]" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" /></svg>
+                                        Wishlist
                                     </a>
-
-
                                     <div className="h-4 w-px bg-gray-300"></div>
-
-
                                     <a href="#" className="flex items-center whitespace-nowrap text-gray-600">
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                            <path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
                                         Compare
                                     </a>
                                 </div>
                                 <div className="mt-4 pt-4 border-t border-gray-200">
-                                    <p className="font-inter font-normal text-[12px] leading-[18px]">Guaranteed Safe Checkout</p>
+                                    <p className="text-sm">Guaranteed Safe Checkout</p>
                                     <div className="flex items-center space-x-1 mt-2">
-                                        <img src="https://i.ibb.co.com/RTMBB1Zv/2239667a7df436f0d9e3723918a9ee8560fd2b80-1.png" alt="Payment methods" className="h-5" />
+                                        <img src="https://i.ibb.co/RTMBB1Zv/2239667a7df436f0d9e3723918a9ee8560fd2b80-1.png" alt="Payment methods" className="h-5" />
                                     </div>
                                 </div>
                             </div>
-                            <div className="p-6 mt-4 text-start lg:col-start-10 lg:col-span-3 w-[302.5px] h-[139.39px]  
-            rounded-[10px] bg-[#EDEFF6] opacity-100">
-                                <button className="w-[151.09px] h-[37px] 
-            rounded-[8px] opacity-100 bg-gray-800 text-white text-sm  py-2.5 font-inter font-normal text-[12px] leading-[18px]">Quick Order 24/7</button>
-                                <p className="font-inter font-bold text-[22px] leading-[26.4px] my-2">(025) 3886 25 16</p>
+                            <div className="rounded-lg bg-[#EDEFF6] p-6 mt-4 text-left">
+                                <button className="bg-gray-800 text-white text-sm py-2 px-4 rounded-md font-medium">Quick Order 24/7</button>
+                                <p className="font-bold text-2xl my-2">(025) 3886 25 16</p>
                             </div>
-                            <div className="flex items-center text-sm text-gray-600 mt-4 lg:col-start-10 lg:col-span-3">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8a1 1 0 001-1zM3 11h10M16 16V4a1 1 0 00-1-1h-1m2 13l2-2m-2 2l-2-2" /></svg>
+                            <div className="flex items-center text-sm text-gray-600 mt-4 p-6 lg:p-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2h8a1 1 0 001-1zM3 11h10M16 16V4a1 1 0 00-1-1h-1m2 13l2-2m-2 2l-2-2" /></svg>
                                 Ships from <span className="font-bold text-gray-800 ml-1">{productData.stock.shipsFrom}</span>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
 
+            
             <div>
-                <ProductBundleSection/>
+                <ProductBundleSection />
             </div>
             <div>
-                <ProductInfoSection/>
+                <ProductInfoSection />
             </div>
-
-
+            <div>
+                <RelatedProducts />
+            </div>
+            <div>
+                <RecentlyViewedSection />
+            </div>
         </>
     );
 };
