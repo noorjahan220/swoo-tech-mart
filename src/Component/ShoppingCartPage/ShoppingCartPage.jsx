@@ -1,5 +1,3 @@
-
-
 const QuantitySelector = () => (
   <div className="flex items-center border border-gray-200 rounded-md w-fit bg-white">
     <button className="px-3 py-1 text-gray-500 hover:bg-gray-100">-</button>
@@ -34,8 +32,8 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-6 relative w-full sm:w-[832.66px] min-h-[282px] rounded-[10px] bg-[#FAFAFA]">
-      <div className="relative flex-shrink-0 w-32 sm:w-40 self-center">
+    <div className="p-4 flex flex-col sm:flex-row items-start sm:items-center gap-6 relative w-full sm:max-w-[832.66px] min-h-[282px] rounded-[10px] bg-[#FAFAFA]">
+      <div className="relative flex-shrink-0 w-full sm:w-40 self-center">
         {item.tags.find(t => t.type === 'save') && (
           <div className="absolute -top-6 -left-6 bg-[#4B3EC4] text-white text-xs font-bold px-3 py-1.5 rounded-md">
             SAVE<br />${item.tags.find(t => t.type === 'save').value}
@@ -63,7 +61,7 @@ const CartItem = ({ item }) => {
         </div>
       </div>
 
-      <div className="flex gap-2 sm:self-start sm:ml-auto">
+      <div className="flex gap-2 sm:self-start sm:ml-auto mt-2 sm:mt-0 flex-wrap">
         {item.colors.map((color, index) => (
           <button key={index} style={{ backgroundColor: color }} className="w-6 h-6 rounded-full border border-gray-200"></button>
         ))}
@@ -73,7 +71,7 @@ const CartItem = ({ item }) => {
 };
 
 const OrderSummary = () => (
-  <div className="w-full lg:w-[401.33px] rounded-[10px] border border-solid border-[#4B3EC4] p-4 self-start lg:self-end">
+  <div className="w-full lg:w-[401.33px] rounded-[10px] border border-solid border-[#4B3EC4] p-4 self-start lg:self-end mt-6 lg:mt-0">
     <h2 className="text-lg font-bold text-gray-800 mb-6">Order Summary</h2>
     <div className="space-y-4">
       <div className="flex justify-between items-center text-gray-600 pb-2 border-b border-gray-200">
@@ -143,15 +141,7 @@ const ShoppingCartPage = () => {
   return (
     <div>
       <div className="bg-[#EBEEF6] w-full pt-8 pb-8 font-inter mt-8">
-        
-
-        {/* <div className="mb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="font-bold text-[14px] text-[#999999] bg-white rounded-md shadow-sm p-4 flex items-center text-sm">
-            <span>Home</span><span className="mx-2">/</span><span>Pages</span><span className="mx-2">/</span><span className="font-bold text-gray-800">Profile</span>
-          </div>
-        </div> */}
-
-        <div className="w-full lg:w-[1360px] bg-white pt-10 mx-auto rounded-[10px] p-4 sm:p-10">
+        <div className="w-full max-w-[1360px] bg-white pt-10 mx-auto rounded-[10px] p-4 sm:p-10">
           <div className="flex flex-col-reverse lg:flex-row gap-8 items-start">
             <div className="w-full lg:w-2/3 space-y-4">
               {cartItems.map(item => <CartItem key={item.id} item={item} />)}
@@ -160,7 +150,6 @@ const ShoppingCartPage = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
