@@ -14,6 +14,7 @@ import ProductDetailPage from './Component/ProductDetailPage/ProductDetailPage';
 import Login from './Component/Authentication/Login';
 import Register from './Component/Authentication/Register';
 import Contact from './Component/Contact/Contact';
+import CheckoutForm from './Component/CheckoutForm/CheckoutForm';
 
 
 const router = createBrowserRouter([
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
         path: "contact",
         element: <Contact/>
       },
+       {
+        path: "checkoutForm",
+        element: <CheckoutForm/>
+      },
+
 
 
     ]
